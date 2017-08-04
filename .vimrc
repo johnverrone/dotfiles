@@ -59,6 +59,7 @@ endif
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set visualbell      " don't beep
 set noerrorbells    " don't beep
+set hidden          " allow switching files with unsaved changes
 
 """"""""""""""""""""""""""""""""""
 " => Plugins 
@@ -66,6 +67,9 @@ set noerrorbells    " don't beep
 
 " ctrl-p (to search for files)
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle,*/vendor/bower*,*/node_modules,*/coverage/*,*/build/*
+
+" Open NERDTree with ctrl-n
+map <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""
 " => Functions 
