@@ -27,6 +27,7 @@ set expandtab
 set smarttab
 
 filetype indent on
+nnoremap <leader>f gg=G
 
 """"""""""""""""""""""""""""""""""
 " => Moving Around 
@@ -70,6 +71,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle,*/vendor/bower*
 
 " Open NERDTree with ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=40
+
+" Allow jsx syntax with .js extension
+let g:jsx_pragma_required = 0
 
 """"""""""""""""""""""""""""""""""
 " => Functions 
