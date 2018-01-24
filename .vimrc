@@ -26,6 +26,7 @@ set softtabstop=2
 set expandtab
 set smarttab
 
+filetype plugin on
 filetype indent on
 nnoremap <leader>f gg=G
 
@@ -75,6 +76,10 @@ let g:NERDTreeWinSize=40
 
 " Allow jsx syntax with .js extension
 let g:jsx_pragma_required = 0
+
+" vim-go import on save
+let g:go_fmt_command = "goimports"
+
 
 """"""""""""""""""""""""""""""""""
 " => Functions 
