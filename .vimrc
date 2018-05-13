@@ -47,7 +47,7 @@ nnoremap <c-l> <c-w>l
 set incsearch
 set hlsearch
 
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <space> :nohlsearch<CR>
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
 " Jump to the last position when reopening a file
@@ -62,6 +62,7 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set visualbell      " don't beep
 set noerrorbells    " don't beep
 set hidden          " allow switching files with unsaved changes
+set autowrite       " auto save files on :make or :GoBuild
 
 """"""""""""""""""""""""""""""""""
 " => Plugins 
