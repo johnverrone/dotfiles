@@ -81,6 +81,15 @@ let g:jsx_pragma_required = 0
 " vim-go import on save
 let g:go_fmt_command = "goimports"
 
+" vim-go jump between errors in quickfix list
+map <C-m> :cnext<CR>
+map <C-k> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+" vim-go run (,r) and test (,t) and coverage (,c) shortcuts
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 
 """"""""""""""""""""""""""""""""""
 " => Functions 
@@ -95,3 +104,15 @@ function! ToggleNumber()
   endif
 endfunc
 map <leader>n :call ToggleNumber()<cr>
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
