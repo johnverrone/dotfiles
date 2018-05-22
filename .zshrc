@@ -12,4 +12,4 @@ fi
 
 # Customize to your needs...
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
+bindkey -e
