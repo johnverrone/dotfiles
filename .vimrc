@@ -14,7 +14,7 @@ set relativenumber
 set cursorline
 
 set background=dark
-colorscheme solarized   
+colorscheme codedark   
 
 """"""""""""""""""""""""""""""""""
 " => Tabs and indent 
