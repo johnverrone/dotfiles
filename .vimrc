@@ -89,8 +89,8 @@ let g:jsx_pragma_required = 0
 let g:go_fmt_command = "goimports"
 
 " vim-go jump between errors in quickfix list
-map <C-m> :cnext<CR>
-map <C-k> :cprevious<CR>
+" map <C-r> :cnext<CR>
+" map <C-t> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " vim-go run (,r) and test (,t) and coverage (,c) shortcuts
