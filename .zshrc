@@ -14,8 +14,3 @@ fi
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 bindkey -e
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jxv5520/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jxv5520/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jxv5520/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jxv5520/google-cloud-sdk/completion.zsh.inc'; fi
