@@ -47,6 +47,10 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Switch buffers with ctrl-n (next) and ctrl-p (previous)
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
 """"""""""""""""""""""""""""""""""
 " => Search 
 """"""""""""""""""""""""""""""""""
@@ -78,8 +82,8 @@ set autowrite       " auto save files on :make or :GoBuild
 " ctrl-p (to search for files)
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/log/*,*/vendor/bundle,*/vendor/bower*,*/node_modules,*/coverage/*,*/build/*
 
-" Open NERDTree with ctrl-n
-map <C-n> :NERDTreeToggle<CR>
+" Open NERDTree with ctrl-\
+map <C-\> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=40
 
 " Allow jsx syntax with .js extension
