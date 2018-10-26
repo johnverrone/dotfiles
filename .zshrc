@@ -10,6 +10,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+export SPACESHIP_DIR_COLOR=208 # orange
+
 # Customize to your needs...
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 bindkey -e
