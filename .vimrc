@@ -74,6 +74,7 @@ set visualbell      " don't beep
 set noerrorbells    " don't beep
 set hidden          " allow switching files with unsaved changes
 set autowrite       " auto save files on :make or :GoBuild
+set backspace=2 " make backspace work like most other programs
 
 """"""""""""""""""""""""""""""""""
 " => Plugins 
