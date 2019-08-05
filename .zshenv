@@ -13,9 +13,6 @@ fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Add golang binaries to path
-export PATH="$PATH:$GOPATH/bin"
-
 # setup NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -27,8 +24,14 @@ export GOOGLE_APPLICATION_CREDENTIALS=~/.np-pro-desk-creds.json
 # GOPATH inside /dev
 export GOPATH=$HOME/dev/go
 
+# Add golang binaries to path
+export PATH="$PATH:$GOPATH/bin"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jxv5520/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jxv5520/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jxv5520/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jxv5520/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add flutter to path
+export PATH="$PATH:$HOME/dev/flutter/flutter/bin"
