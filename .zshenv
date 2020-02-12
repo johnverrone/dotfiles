@@ -13,12 +13,6 @@ fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# GCP Authentication
-export GOOGLE_APPLICATION_CREDENTIALS=~/.np-pro-desk-creds.json
-
-# GOPATH inside /dev
-export GOPATH=$HOME/dev/go
-
 # Add golang binaries to path
 export PATH="$PATH:$GOPATH/bin"
 
@@ -28,5 +22,9 @@ if [ -f '/Users/jxv5520/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jx
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jxv5520/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jxv5520/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Add flutter to path
-export PATH="$PATH:$HOME/dev/flutter/flutter/bin"
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+# ---------- FullStory ----------
+#
+# Ignore FullStory's PS1
+export SKIP_FS_PS1=true
