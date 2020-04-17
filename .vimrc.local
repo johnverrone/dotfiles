@@ -15,14 +15,13 @@ set noeol
 set nofixendofline
 
 let g:go_bin_path=$HOME."/dev/go/bin"
-
 let g:deoplete#enable_at_startup = 0
-
 let g:jsx_ext_required = 1
 
 command! -bang ProjectFiles call fzf#vim#files('~/src/mn/projects/fullstory', <bang>0)
 nnoremap <c-p> :ProjectFiles<CR>
 nmap <leader>rn <Plug>(coc-rename)
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:tagbar_type_typescript = {
       \ 'ctagstype': 'typescript',
