@@ -16,6 +16,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add golang binaries to path
 export PATH="$PATH:$GOPATH/bin"
 
+export GOPATH="$HOME/dev/go:$GOPATH"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jxv5520/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jxv5520/google-cloud-sdk/path.zsh.inc'; fi
 
