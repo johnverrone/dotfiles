@@ -1,7 +1,20 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["go", "c", "cpp"],
-  "eslint.enable": false,
-  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "go",
+    "c",
+    "cpp"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
   "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true
 }
