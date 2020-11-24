@@ -16,6 +16,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add golang binaries to path
 export PATH="$PATH:$GOPATH/bin"
 
+# Add jv scripts to path
+export PATH="$PATH:$HOME/.config/jv"
+
 export GOPATH="$HOME/dev/go:$GOPATH"
 
 # The next line updates PATH for the Google Cloud SDK.
