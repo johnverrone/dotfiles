@@ -16,7 +16,8 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " sayonara on leader q
-nnoremap <silent> <leader>q :Sayonara<cr>
+nnoremap <silent> <leader>Q :Sayonara<cr>
+nnoremap <silent> <leader>q :Sayonara!<cr>
 
 " set colorscheme
 colorscheme codedark
