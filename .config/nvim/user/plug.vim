@@ -2,6 +2,8 @@
 UnPlug 'maximbaz/lightline-ale'
 UnPlug 'dense-analysis/ale'
 UnPlug 'leafgarland/typescript-vim'
+UnPlug 'peitalin/vim-jsx-typescript'
+
 
 " .tsx support
 Plug 'HerringtonDarkholme/yats.vim'

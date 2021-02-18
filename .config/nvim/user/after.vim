@@ -30,9 +30,7 @@ set nofixendofline
 let g:jsx_ext_required = 1
 
 " use fullstory/ as project root
-let g:rooter_patterns = ['fullstory/']
+let g:rooter_patterns = ['=fullstory']
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" coc-k

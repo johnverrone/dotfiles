@@ -9,6 +9,8 @@
     "c",
     "cpp"
   ],
+  "prettier.requireConfig": true,
+  "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
     "typescript",
