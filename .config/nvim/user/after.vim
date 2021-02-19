@@ -21,6 +21,7 @@ nnoremap <silent> <leader>q :Sayonara!<cr>
 
 " set colorscheme
 colorscheme codedark
+let g:airline_theme = 'codedark'
 
 " end of line things
 set noeol
