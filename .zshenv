@@ -33,3 +33,4 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 #
 # Ignore FullStory's PS1
 export SKIP_FS_PS1=true
+source "$HOME/.cargo/env"
