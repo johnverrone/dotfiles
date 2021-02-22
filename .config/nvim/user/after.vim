@@ -34,3 +34,6 @@ let g:rooter_patterns = ['=fullstory']
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Close all but current buffers
+command! BufOnly silent! execute "%bd|e#|bd#"
