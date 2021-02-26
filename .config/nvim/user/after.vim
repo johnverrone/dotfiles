@@ -38,3 +38,9 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Close all but current buffers
 command! BufOnly silent! execute "%bd|e#|bd#"
+
+" Customize FZFRg
+command! -bang -nargs=* FZFRg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)

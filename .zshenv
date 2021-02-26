@@ -27,7 +27,7 @@ if [ -f '/Users/john/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/john/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/john/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/john/google-cloud-sdk/completion.zsh.inc'; fi
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
 
 # ---------- FullStory ----------
 #
