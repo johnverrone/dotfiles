@@ -44,3 +44,12 @@ command! -bang -nargs=* FZFRg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
+
+" Auto toggle to relative line numbers on focused, normal mode files
+set rnu
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set rnu
+  autocmd BufLeave,FocusLost,InsertEnter * set nornu
+augroup END

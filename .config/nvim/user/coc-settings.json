@@ -10,11 +10,8 @@
     "cpp"
   ],
   "prettier.requireConfig": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact"
-  ]
+  "prettier.eslintIntegration": true,
+  "prettier.disableSuccessMessage": true,
+
+  "eslint.autoFixOnSave": true
 }
