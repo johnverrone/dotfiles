@@ -23,6 +23,10 @@ nnoremap <silent> <leader>q :Sayonara!<cr>
 colorscheme codedark
 let g:airline_theme = 'codedark'
 
+" shiftwidth
+set expandtab
+set shiftwidth=2
+
 " end of line things
 set noeol
 set nofixendofline
@@ -48,8 +52,12 @@ command! -bang -nargs=* FZFRg
 " Auto toggle to relative line numbers on focused, normal mode files
 set rnu
 
+" Intellegintly toggle line number type
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set rnu
   autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
+
+" Shortcut to open etc/localdev/featureflags.yaml
+command Flags edit $FS_HOME/etc/localdev/featureflags.yaml

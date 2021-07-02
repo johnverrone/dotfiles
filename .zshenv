@@ -33,4 +33,3 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob
 #
 # Ignore FullStory's PS1
 export SKIP_FS_PS1=true
-source "$HOME/.cargo/env"
