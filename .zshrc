@@ -43,4 +43,5 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f /Users/johnverrone/.fsprofile ]; then
   source /Users/johnverrone/.fsprofile
   eval "$(direnv hook zsh)"
+  if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
 fi

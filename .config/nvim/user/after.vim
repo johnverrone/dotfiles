@@ -59,5 +59,8 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
 
+" Use html type for htmto files
+au BufRead,BufNewFile *.htmto set filetype=html
+
 " Shortcut to open etc/localdev/featureflags.yaml
 command Flags edit $FS_HOME/etc/localdev/featureflags.yaml
