@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 #
 # Executes commands at the start of an interactive session.
 #
@@ -20,6 +22,12 @@ alias svc='$FS_HOME/go/src/fs/services'
 
 # spotify cli
 alias sp='spotify'
+
+# storybook
+alias sb='npm run storybook -- -p 64000'
+
+# personal monorepo
+alias jv='cd ~/dev/jv'
 
 # fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -45,3 +53,6 @@ if [ -f /Users/johnverrone/.fsprofile ]; then
   eval "$(direnv hook zsh)"
   if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
 fi
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
