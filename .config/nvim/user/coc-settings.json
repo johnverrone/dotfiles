@@ -10,8 +10,6 @@
     "cpp"
   ],
   "prettier.requireConfig": true,
-  "prettier.eslintIntegration": false,
   "prettier.disableSuccessMessage": true,
-
   "eslint.autoFixOnSave": true
 }
