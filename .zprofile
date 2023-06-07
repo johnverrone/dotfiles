@@ -1,9 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-<<<<<<< HEAD
-[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && . "$HOME/.fig/shell/zprofile.pre.zsh"
-=======
 [[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
->>>>>>> fb560ed (zsh updates)
 #
 # Executes commands at login pre-zshrc.
 #
