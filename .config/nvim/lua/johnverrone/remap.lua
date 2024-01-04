@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- go back to net-rw easily
+vim.keymap.set("n", "-", vim.cmd.Ex)
 
 -- keep searches in the middle
 vim.keymap.set("n", "n", "nzzzv")

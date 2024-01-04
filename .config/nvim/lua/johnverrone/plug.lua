@@ -12,8 +12,10 @@ Plug('nvim-telescope/telescope.nvim', {tag = '0.1.5'})
 -- colorscheme
 Plug 'tomasiser/vim-code-dark'
 
--- cmp for autocompletion
+-- lsp and autocompletion
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
