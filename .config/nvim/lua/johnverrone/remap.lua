@@ -8,3 +8,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- paste in visual and keep pasted value in register
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
+-- faster saving
+vim.keymap.set("n", "zz", vim.cmd.update)
