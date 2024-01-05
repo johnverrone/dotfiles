@@ -26,4 +26,7 @@ Plug('L3MON4D3/LuaSnip', {tag = 'v2.*', ['do'] = 'make install_jsregexp'})
 -- golang
 Plug('fatih/vim-go', {['do'] = ':GoUpdateBinaries' })
 
+-- run formatting tools
+Plug 'mhartington/formatter.nvim'
+
 vim.call('plug#end')
