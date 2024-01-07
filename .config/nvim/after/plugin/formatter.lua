@@ -5,6 +5,7 @@ local util = require "formatter.util"
 require("formatter").setup {
   filetype = {
     lua = { require("formatter.filetypes.lua").stylua },
+    svelte = { require("formatter.filetypes.svelte").prettier },
     typescript = { require("formatter.filetypes.typescript").prettier },
     typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
 
@@ -27,4 +28,3 @@ autocmd("BufWritePost", {
 	group = "__formatter__",
 	command = ":FormatWrite",
 })
-
