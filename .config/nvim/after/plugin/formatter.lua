@@ -1,4 +1,5 @@
 -- Utilities for creating configurations
+local defaults = require("formatter.defaults")
 local util = require("formatter.util")
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
@@ -10,6 +11,7 @@ require("formatter").setup({
 		svelte = { require("formatter.filetypes.svelte").prettier },
 		typescript = { require("formatter.filetypes.typescript").prettier },
 		typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
+		astro = { util.withl(defaults.prettier, "astro") },
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
