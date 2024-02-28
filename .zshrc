@@ -12,6 +12,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# ensure brew bin is in PATH
+export PATH="/opt/homebrew/bin:$PATH"
+
+# load spaceship prompt
+source /opt/homebrew/opt/spaceship/spaceship.zsh
 export SPACESHIP_DIR_COLOR=208 # orange
 
 # dotfile management
