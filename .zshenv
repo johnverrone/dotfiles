@@ -21,6 +21,14 @@ export PATH="$PATH:$HOME/.config/jv"
 
 export GOPATH="$HOME/dev/go:$GOPATH"
 
+# Spaceship prompt configs to play nice with Warp
+export SPACESHIP_PROMPT_ASYNC=false
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+  # Warp doesnt support multi-line prompts yet
+  export SPACESHIP_PROMPT_SEPARATE_LINE=false
+fi
+
 # Path and completions for the Google Cloud SDK.
 if [ -d /opt/homebrew/share/google-cloud-sdk/ ]; then
   source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
