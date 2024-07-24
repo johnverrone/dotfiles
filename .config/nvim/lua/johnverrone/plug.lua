@@ -32,4 +32,7 @@ Plug("mhartington/formatter.nvim")
 -- git
 Plug("tpope/vim-fugitive")
 
+-- commentary
+Plug("tpope/vim-commentary")
+
 vim.call("plug#end")

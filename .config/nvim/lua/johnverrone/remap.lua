@@ -30,3 +30,6 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/johnverrone/plug.l
 
 -- restart lsp
 vim.keymap.set("n", "<leader>lr", vim.cmd.LspRestart)
+
+-- quickly delete buffer
+vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>")
