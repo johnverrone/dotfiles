@@ -11,6 +11,7 @@ Plug("nvim-telescope/telescope.nvim", { tag = "0.1.5" })
 
 -- colorscheme
 Plug("tomasiser/vim-code-dark")
+Plug('NLKNguyen/papercolor-theme')
 
 -- lsp and autocompletion
 Plug("neovim/nvim-lspconfig")
