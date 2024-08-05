@@ -33,3 +33,6 @@ vim.keymap.set("n", "<leader>lr", vim.cmd.LspRestart)
 
 -- quickly delete buffer
 vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>")
+
+-- clear search highlighting
+vim.keymap.set("n", "<esc>", ":noh<CR><esc>")
