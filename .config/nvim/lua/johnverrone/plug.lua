@@ -8,6 +8,7 @@ Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
 -- telescope fuzzy finder
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim", { tag = "0.1.5" })
+Plug("nvim-telescope/telescope-ui-select.nvim") -- allows nvim to use telescope picker
 
 -- colorscheme
 Plug("tomasiser/vim-code-dark")
