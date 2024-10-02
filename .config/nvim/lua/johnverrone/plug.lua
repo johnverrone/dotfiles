@@ -33,8 +33,12 @@ Plug("mhartington/formatter.nvim")
 
 -- git
 Plug("tpope/vim-fugitive")
+Plug("tpope/vim-rhubarb")
 
 -- commentary
 Plug("tpope/vim-commentary")
+
+-- abolish (dealing with word variants)
+Plug("tpope/vim-abolish")
 
 vim.call("plug#end")
