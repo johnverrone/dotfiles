@@ -41,4 +41,8 @@ Plug("tpope/vim-commentary")
 -- abolish (dealing with word variants)
 Plug("tpope/vim-abolish")
 
+-- surround (for wrapping stuff)
+Plug("tpope/vim-surround")
+Plug("tpope/vim-repeat")
+
 vim.call("plug#end")

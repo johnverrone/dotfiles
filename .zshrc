@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FPATH="/Users/johnverrone/.zsh/completions:$FPATH"; fi
 #
 # Executes commands at the start of an interactive session.
 #
