@@ -72,5 +72,8 @@ if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FP
 export BUN_INSTALL="/Users/john/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 source /Users/johnverrone/.fsprofile
 eval "$(direnv hook zsh)"
