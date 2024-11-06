@@ -12,7 +12,7 @@ Plug("nvim-telescope/telescope-ui-select.nvim") -- allows nvim to use telescope 
 
 -- colorscheme
 Plug("tomasiser/vim-code-dark")
-Plug('NLKNguyen/papercolor-theme')
+Plug("NLKNguyen/papercolor-theme")
 
 -- lsp and autocompletion
 Plug("neovim/nvim-lspconfig")
@@ -44,5 +44,8 @@ Plug("tpope/vim-abolish")
 -- surround (for wrapping stuff)
 Plug("tpope/vim-surround")
 Plug("tpope/vim-repeat")
+
+-- markdown rendering
+Plug("MeanderingProgrammer/render-markdown.nvim")
 
 vim.call("plug#end")
