@@ -52,4 +52,9 @@ Plug("MeanderingProgrammer/render-markdown.nvim")
 -- icon library for markdown rendering
 Plug("nvim-tree/nvim-web-devicons")
 
+-- copilot chat
+Plug("zbirenbaum/copilot.lua")
+Plug("nvim-lua/plenary.nvim")
+Plug("CopilotC-Nvim/CopilotChat.nvim", { ["branch"] = "canary" })
+
 vim.call("plug#end")
