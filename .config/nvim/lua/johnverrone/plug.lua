@@ -13,6 +13,7 @@ Plug("nvim-telescope/telescope-ui-select.nvim") -- allows nvim to use telescope 
 -- colorscheme
 Plug("tomasiser/vim-code-dark")
 Plug("NLKNguyen/papercolor-theme")
+Plug("catppuccin/nvim", { ["as"] = "catppuccin" })
 
 -- lsp and autocompletion
 Plug("neovim/nvim-lspconfig")
@@ -47,5 +48,8 @@ Plug("tpope/vim-repeat")
 
 -- markdown rendering
 Plug("MeanderingProgrammer/render-markdown.nvim")
+
+-- icon library for markdown rendering
+Plug("nvim-tree/nvim-web-devicons")
 
 vim.call("plug#end")

@@ -1,5 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FPATH="/Users/johnverrone/.zsh/completions:$FPATH"; fi
 #
 # Executes commands at the start of an interactive session.
 #
@@ -33,6 +31,9 @@ alias sb='npm run storybook -- -p 64000'
 # personal monorepo
 alias jv='cd ~/dev/jv'
 
+# eza - better ls
+alias ll='eza -l --icons --git -a'
+
 # fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -60,6 +61,9 @@ if [ -f "$HOME/.fsprofile" ]; then
   if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
   alias svc='$FS_HOME/go/src/fs/services'
 fi
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FPATH="/Users/johnverrone/.zsh/completions:$FPATH"; fi
 
 # bun completions
 [ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
