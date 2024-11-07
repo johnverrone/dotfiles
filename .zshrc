@@ -75,5 +75,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init zsh)"
 
+# deno
+[ -s "/Users/johnverrone/.deno/env" ] && source "/Users/johnverrone/.deno/env"
+
 source /Users/johnverrone/.fsprofile
 eval "$(direnv hook zsh)"
