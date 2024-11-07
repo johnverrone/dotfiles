@@ -78,5 +78,7 @@ eval "$(zoxide init zsh)"
 # deno
 [ -s "/Users/johnverrone/.deno/env" ] && source "/Users/johnverrone/.deno/env"
 
-source /Users/johnverrone/.fsprofile
-eval "$(direnv hook zsh)"
+if command -v direnv 2>&1 >/dev/null
+then
+  eval "$(direnv hook zsh)"
+fi
