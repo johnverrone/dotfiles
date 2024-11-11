@@ -33,7 +33,8 @@ alias jv='cd ~/dev/jv'
 
 # eza - better ls
 alias ll='eza -l --icons --git -a --group-directories-first'
-alias lt='eza --tree --level=2 -l --icons --git --group-directories-first'
+alias lt='eza --tree --level=2 -l --icons --git --group-directories-first --git-ignore'
+alias lta='eza --tree --level=2 -l --icons --git --group-directories-first'
 
 # fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
