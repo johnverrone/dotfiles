@@ -20,8 +20,6 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 2000
 
-vim.opt.colorcolumn = "80"
-
 vim.opt.splitright = true
 
 vim.g.mapleader = " "
