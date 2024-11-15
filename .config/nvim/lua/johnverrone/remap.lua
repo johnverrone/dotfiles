@@ -35,4 +35,10 @@ vim.keymap.set("n", "<leader>lr", vim.cmd.LspRestart)
 vim.keymap.set("n", "<leader>d", "<cmd>bd<CR>")
 
 -- clear search highlighting
-vim.keymap.set("n", "<esc>", ":noh<CR><esc>")
+vim.keymap.set("n", "ss", ":noh<CR>", { noremap = true })
+
+-- automatically close quickfix after selection
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "qf" },
+	command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]],
+})
