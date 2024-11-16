@@ -42,3 +42,15 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "qf" },
 	command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]],
 })
+
+-- vim-go
+vim.g.go_term_reuse = 1
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "go" },
+	command = [[nmap <leader>r <Plug>(go-run-vertical)]],
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "go" },
+	command = [[nmap <leader>t <Plug>(go-test)]],
+})
