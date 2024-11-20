@@ -54,3 +54,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "go" },
 	command = [[nmap <leader>t <Plug>(go-test)]],
 })
+
+-- noice
+vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
