@@ -7,6 +7,20 @@ require("telescope").setup({
 			},
 		},
 	},
+	pickers = {
+		buffers = {
+			show_all_buffers = true,
+			sort_last_used = true,
+			mappings = {
+				i = {
+					["<c-d>"] = "delete_buffer",
+				},
+				n = {
+					["d"] = "delete_buffer",
+				},
+			},
+		},
+	},
 	extensions = {
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({}),
