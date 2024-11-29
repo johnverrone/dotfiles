@@ -24,6 +24,9 @@ vim.opt.splitright = true
 
 vim.g.mapleader = " "
 
+-- vim-go
+vim.g.go_term_enabled = 1
+vim.g.go_term_reuse = 1
 vim.g.go_debug_windows = {
 	vars = "leftabove 60vnew",
 	stack = "leftabove 20new",
