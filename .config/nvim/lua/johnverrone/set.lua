@@ -23,3 +23,10 @@ vim.opt.timeoutlen = 2000
 vim.opt.splitright = true
 
 vim.g.mapleader = " "
+
+vim.g.go_debug_windows = {
+	vars = "leftabove 60vnew",
+	stack = "leftabove 20new",
+	goroutines = "botright 10new",
+	out = "botright 5new",
+}
