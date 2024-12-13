@@ -30,7 +30,8 @@ vim.g.go_term_reuse = 1
 vim.g.go_term_close_on_exit = 0
 vim.g.go_debug_windows = {
 	vars = "leftabove 60vnew",
-	stack = "leftabove 20new",
-	goroutines = "botright 10new",
-	out = "botright 5new",
+	--	stack = "leftabove 20new",
+	-- goroutines = "botright 10new",
+	-- out = "botright 5new",
 }
+vim.g.go_debug_preserve_layout = 1
