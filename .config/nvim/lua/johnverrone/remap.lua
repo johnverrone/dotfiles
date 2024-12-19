@@ -1,6 +1,3 @@
--- go back to net-rw easily
-vim.keymap.set("n", "-", vim.cmd.Ex)
-
 -- make joining lines not jump to end
 vim.keymap.set("n", "J", "mzJ`z")
 

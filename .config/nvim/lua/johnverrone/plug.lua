@@ -62,4 +62,7 @@ Plug("folke/noice.nvim")
 Plug("MunifTanjim/nui.nvim")
 Plug("rcarriga/nvim-notify")
 
+-- mini.files for file system navigation and management
+Plug("echasnovski/mini.files")
+
 vim.call("plug#end")
