@@ -48,3 +48,10 @@ vim.api.nvim_set_keymap(
 	"<Cmd>lua require('telescope.builtin').commands()<CR>",
 	{ noremap = false }
 )
+
+vim.keymap.set("n", "<leader>vc", function()
+	builtin.find_files({
+		prompt_title = "Neovim config files",
+		cwd = "~/.config/nvim",
+	})
+end)
