@@ -19,12 +19,14 @@ Plug("catppuccin/nvim", { ["as"] = "catppuccin" })
 Plug("neovim/nvim-lspconfig")
 Plug("williamboman/mason.nvim")
 Plug("williamboman/mason-lspconfig.nvim")
-Plug("hrsh7th/cmp-nvim-lsp")
+Plug("hrsh7th/nvim-cmp")
 Plug("hrsh7th/cmp-buffer")
 Plug("hrsh7th/cmp-path")
 Plug("hrsh7th/cmp-cmdline")
-Plug("hrsh7th/nvim-cmp")
+Plug("hrsh7th/cmp-nvim-lua")
+Plug("hrsh7th/cmp-nvim-lsp")
 Plug("L3MON4D3/LuaSnip", { tag = "v2.*", ["do"] = "make install_jsregexp" })
+Plug("onsails/lspkind.nvim") -- adds icons to lsp completion items
 
 -- golang
 Plug("fatih/vim-go", { ["do"] = ":GoUpdateBinaries" })
@@ -52,10 +54,10 @@ Plug("MeanderingProgrammer/render-markdown.nvim")
 -- icon library for markdown rendering
 Plug("nvim-tree/nvim-web-devicons")
 
--- copilot chat
+-- copilot
 Plug("zbirenbaum/copilot.lua")
-Plug("nvim-lua/plenary.nvim")
-Plug("CopilotC-Nvim/CopilotChat.nvim", { ["branch"] = "canary" })
+Plug("zbirenbaum/copilot-cmp")
+Plug("CopilotC-Nvim/CopilotChat.nvim")
 
 -- noice for vim toast style alerts and pretty cmdline
 Plug("folke/noice.nvim")

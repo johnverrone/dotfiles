@@ -50,7 +50,7 @@ require("mason-lspconfig").setup({
 	handlers = {
 		default_setup,
 		lua_ls = function()
-			require('lsp_config').lua_ls.setup({
+			require("lsp_config").lua_ls.setup({
 				capabilities = lsp_capabilities,
 				settings = {
 					Lua = {
@@ -73,35 +73,14 @@ require("mason-lspconfig").setup({
 })
 
 -- setup lsp servers AFTER mason-lspconfig is init
-local nvim_lsp = require('lspconfig')
-nvim_lsp.denols.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-}
+local nvim_lsp = require("lspconfig")
+nvim_lsp.denols.setup({
+	on_attach = on_attach,
+	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+})
 
-nvim_lsp.ts_ls.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
-  single_file_support = false
-}
-
-
-local cmp = require("cmp")
-
-cmp.setup({
-	sources = {
-		{ name = "nvim_lsp" },
-	},
-	mapping = cmp.mapping.preset.insert({
-		-- Enter key confirms completion item
-		["<CR>"] = cmp.mapping.confirm({ select = false }),
-
-		-- Ctrl + space triggers completion menu
-		["<C-Space>"] = cmp.mapping.complete(),
-	}),
-	snippet = {
-		expand = function(args)
-			require("luasnip").lsp_expand(args.body)
-		end,
-	},
+nvim_lsp.ts_ls.setup({
+	on_attach = on_attach,
+	root_dir = nvim_lsp.util.root_pattern("package.json"),
+	single_file_support = false,
 })

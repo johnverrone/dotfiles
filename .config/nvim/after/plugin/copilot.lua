@@ -1,9 +1,16 @@
+require("copilot").setup({
+	suggestion = { enabled = false },
+	panel = { enabled = false },
+})
+
+require("copilot_cmp").setup()
+
 require("CopilotChat").setup({
 	-- See Configuration section for options
 	model = "claude-3.5-sonnet",
 })
 
--- show prompts with telescopt
+-- show prompts with telescope
 vim.keymap.set("n", "<leader>ccp", function()
 	local actions = require("CopilotChat.actions")
 	require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
