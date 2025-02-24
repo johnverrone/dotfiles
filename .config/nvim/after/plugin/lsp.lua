@@ -46,11 +46,11 @@ end
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "ts_ls", "eslint", "gopls", "sqlls" },
+	ensure_installed = { "lua_ls", "ts_ls", "eslint", "gopls", "sqlls" },
 	handlers = {
 		default_setup,
 		lua_ls = function()
-			require("lsp_config").lua_ls.setup({
+			require("lspconfig").lua_ls.setup({
 				capabilities = lsp_capabilities,
 				settings = {
 					Lua = {
