@@ -3,6 +3,7 @@ local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+local act = wezterm.action
 
 config.color_scheme = "Vs Code Dark+ (Gogh)"
 config.enable_tab_bar = false
@@ -18,7 +19,27 @@ config.mouse_bindings = {
 	{
 		event = { Up = { streak = 1, button = "Left" } },
 		mods = "CMD",
-		action = wezterm.action.OpenLinkAtMouseCursor,
+		action = act.OpenLinkAtMouseCursor,
+	},
+}
+
+config.keys = {
+	-- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to jump by word
+	{
+		key = "LeftArrow",
+		mods = "OPT",
+		action = act.SendKey({
+			key = "b",
+			mods = "ALT",
+		}),
+	},
+	{
+		key = "RightArrow",
+		mods = "OPT",
+		action = act.SendKey({
+			key = "f",
+			mods = "ALT",
+		}),
 	},
 }
 

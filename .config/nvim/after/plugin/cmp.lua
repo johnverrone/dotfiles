@@ -12,16 +12,16 @@ cmp.setup({
 		-- documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 		["<C-Space>"] = cmp.mapping.complete(),
 	}),
 	sources = cmp.config.sources({
 		-- order === completion priority
+		{ name = "nvim_lsp" },
 		-- Copilot
 		{ name = "copilot" },
 		-- Other
 		{ name = "nvim_lua" },
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 	}),
