@@ -1,4 +1,6 @@
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.setup({
 	defaults = {
 		mappings = {
 			i = {
@@ -28,26 +30,22 @@ require("telescope").setup({
 	},
 })
 
-require("telescope").load_extension("ui-select")
+require("dir-telescope").setup({})
+telescope.load_extension("ui-select")
+telescope.load_extension("dir")
 
 local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>pp", builtin.builtin, {})
 vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
-
-vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+vim.keymap.set("n", "<leader>pf", telescope.extensions.dir.find_files, {})
 vim.keymap.set("n", "<leader>b", builtin.buffers, {})
 vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+vim.keymap.set("n", "<leader><tab>", builtin.commands, {})
 vim.keymap.set("n", "<leader>ps", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 -- make leader-p noop so that it doesn't paste when I bail out of the keybinding
 vim.keymap.set("n", "<leader>p", "<nop>", {})
-
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader><tab>",
-	"<Cmd>lua require('telescope.builtin').commands()<CR>",
-	{ noremap = false }
-)
 
 vim.keymap.set("n", "<leader>vc", function()
 	builtin.find_files({

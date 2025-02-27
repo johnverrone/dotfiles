@@ -53,3 +53,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- noice
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
+
+-- open FS localdev featureflags
+vim.api.nvim_set_keymap("n", "<leader>ff", ":e $FS_HOME/etc/localdev/featureflags.yaml<CR>", { noremap = true })
