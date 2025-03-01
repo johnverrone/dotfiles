@@ -17,6 +17,7 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		-- order === completion priority
+		-- LSP
 		{ name = "nvim_lsp" },
 		-- Copilot
 		{ name = "copilot" },

@@ -20,12 +20,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-		vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
-		vim.keymap.set("n", "<space>wl", function()
-			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
+		vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
@@ -36,49 +31,57 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+local nvim_lsp = require("lspconfig")
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-local default_setup = function(server)
-	require("lspconfig")[server].setup({
-		capabilities = lsp_capabilities,
-	})
-end
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "ts_ls", "eslint", "gopls", "sqlls" },
-	handlers = {
-		default_setup,
-		lua_ls = function()
-			require("lspconfig").lua_ls.setup({
-				capabilities = lsp_capabilities,
-				settings = {
-					Lua = {
-						runtime = {
-							version = "LuaJIT",
-						},
-						diagnostics = {
-							globals = { "vim" },
-						},
-						workspace = {
-							library = {
-								vim.env.VIMRUNTIME,
-							},
+})
+require("mason-lspconfig").setup_handlers({
+	-- default handler
+	function(server_name)
+		nvim_lsp[server_name].setup({
+			capabilities = lsp_capabilities,
+		})
+	end,
+
+	-- Next, you can provide a dedicated handler for specific servers.
+	-- For example, a handler override for the `rust_analyzer`:
+	["rust_analyzer"] = function()
+		require("rust-tools").setup({})
+	end,
+	["denols"] = function()
+		nvim_lsp.denols.setup({
+			root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+		})
+	end,
+
+	["ts_ls"] = function()
+		nvim_lsp.ts_ls.setup({
+			capabilities = lsp_capabilities,
+			root_dir = nvim_lsp.util.root_pattern("package.json"),
+			single_file_support = false,
+		})
+	end,
+	["lua_ls"] = function()
+		nvim_lsp.lua_ls.setup({
+			capabilities = lsp_capabilities,
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						library = {
+							vim.env.VIMRUNTIME,
 						},
 					},
 				},
-			})
-		end,
-	},
-})
-
--- setup lsp servers AFTER mason-lspconfig is init
-local nvim_lsp = require("lspconfig")
-nvim_lsp.denols.setup({
-	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-})
-
-nvim_lsp.ts_ls.setup({
-	root_dir = nvim_lsp.util.root_pattern("package.json"),
-	single_file_support = false,
+			},
+		})
+	end,
 })
