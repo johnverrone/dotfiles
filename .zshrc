@@ -62,6 +62,12 @@ if [ -f "$HOME/.fsprofile" ]; then
   eval "$(/opt/homebrew/bin/direnv hook zsh)"
   if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
   alias svc='$FS_HOME/go/src/fs/services'
+
+  # function to shorthand `make <cogs> && ./services restart <cogs>`
+  function mr() {
+    echo "rebuiding and restarting: $@"
+    make "$@" && ./services restart "$@"
+  }
 fi
 
 # Add deno completions to search path

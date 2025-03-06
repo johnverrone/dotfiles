@@ -68,4 +68,9 @@ Plug("rcarriga/nvim-notify")
 -- mini.files for file system navigation and management
 Plug("echasnovski/mini.files")
 
+-- interact with databases
+Plug("tpope/vim-dadbod")
+Plug("kristijanhusak/vim-dadbod-completion")
+Plug("kristijanhusak/vim-dadbod-ui")
+
 vim.call("plug#end")
