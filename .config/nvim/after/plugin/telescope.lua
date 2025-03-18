@@ -8,6 +8,12 @@ telescope.setup({
 				["<C-k>"] = require("telescope.actions").move_selection_previous,
 			},
 		},
+		git_worktrees = {
+			{
+				toplevel = vim.env.HOME,
+				gitdir = vim.env.HOME .. "/.cfg",
+			},
+		},
 	},
 	pickers = {
 		buffers = {
@@ -49,8 +55,8 @@ end)
 vim.keymap.set("n", "<leader>p", "<nop>", {})
 
 vim.keymap.set("n", "<leader>vc", function()
-	builtin.find_files({
-		prompt_title = "Neovim config files",
-		cwd = "~/.config/nvim",
+	builtin.git_files({
+		cwd = vim.env.HOME,
+		prompt_title = "dotfiles",
 	})
 end)
