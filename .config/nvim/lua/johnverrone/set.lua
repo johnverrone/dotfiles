@@ -21,6 +21,7 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 2000
 
 vim.opt.splitright = true
+vim.opt.equalalways = false
 
 vim.g.mapleader = " "
 
@@ -35,7 +36,7 @@ vim.g.go_debug_windows = {
 	vars = "leftabove 60vnew",
 	stack = "leftabove 20new",
 	goroutines = "botright 10new",
-	out = "botright 5new",
+	out = "botright 10new",
 }
 vim.g.go_debug_preserve_layout = 1
 vim.g.go_debug_address = "127.0.0.1:50206"
