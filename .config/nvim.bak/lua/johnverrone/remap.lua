@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "go" },
-	command = [[nmap <leader>t <Plug>(go-test)]],
+	command = [[nmap <leader>t <Plug>(go-test-func)]],
 })
 
 -- noice

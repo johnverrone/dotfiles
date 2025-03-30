@@ -61,7 +61,7 @@ require("mason-lspconfig").setup_handlers({
 	["eslint"] = function()
 		nvim_lsp.eslint.setup({
 			capabilities = lsp_capabilities,
-			on_attach = function(client, bufnr)
+			on_attach = function(_, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
 					command = "EslintFixAll",
