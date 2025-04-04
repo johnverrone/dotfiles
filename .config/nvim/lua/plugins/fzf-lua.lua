@@ -10,4 +10,9 @@ return {
       desc = "Git branches",
     },
   },
+  keymap = {
+    builtin = {
+      ["<F4>"] = "toggle-preview",
+    },
+  },
 }
