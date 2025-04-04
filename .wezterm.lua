@@ -8,7 +8,7 @@ local act = wezterm.action
 config.color_scheme = "Vs Code Dark+ (Gogh)"
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
-config.font_size = 14
+config.font_size = 18
 config.use_cap_height_to_scale_fallback_fonts = true
 
 -- disabled ligatures
@@ -16,6 +16,7 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 config.mouse_bindings = {
 	-- Ctrl-click will open the link under the mouse cursor
+	-- this doesn't work in tmux
 	{
 		event = { Up = { streak = 1, button = "Left" } },
 		mods = "CMD",
@@ -41,6 +42,11 @@ config.keys = {
 			mods = "ALT",
 		}),
 	},
+}
+
+-- window appearance
+config.window_padding = {
+	bottom = 0,
 }
 
 -- and finally, return the configuration to wezterm
