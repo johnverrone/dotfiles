@@ -36,8 +36,8 @@ alias ll='eza -l --icons --git -a --group-directories-first'
 alias lt='eza --tree --level=2 -l --icons --git --group-directories-first --git-ignore'
 alias lta='eza --tree --level=2 -l --icons --git --group-directories-first'
 
-# fzf config
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # fzf open files
 #   - CTRL-O to open with `open` command,

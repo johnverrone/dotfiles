@@ -29,7 +29,10 @@ vim.g.mapleader = " "
 vim.opt.wildmode = "longest,list,full"
 
 -- vim-go
+vim.g.go_test_show_name = 1
 vim.g.go_term_enabled = 1
+vim.g.go_term_mode = "botright split"
+vim.g.go_term_height = 20
 vim.g.go_term_reuse = 1
 vim.g.go_term_close_on_exit = 0
 vim.g.go_debug_windows = {
