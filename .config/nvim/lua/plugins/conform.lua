@@ -5,7 +5,9 @@ return {
       go = { "gofmt" },
       scss = { "prettier" },
       javascript = { "prettier" },
+      javascriptreact = { "prettier" },
       typescript = { "prettier" },
+      typescriptreact = { "prettier" },
     },
   },
 }
