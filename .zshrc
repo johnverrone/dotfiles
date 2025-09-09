@@ -22,7 +22,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 bindkey -e
 
 # Claude Code to local installation
-alias claude="/Users/johnverrone/.claude/local/claude"
 
 # spotify cli
 alias sp='spotify'

@@ -13,19 +13,6 @@ return {
           print("Debugging " .. cog)
           return package
         end,
-        -- program = function()
-        --   return coroutine.create(function(dap_run_co)
-        --     local path = vim.fn.getcwd() .. "/go/src/fs/services/"
-        --     local cogs = vim.split(vim.fn.glob(path .. "*"), "\n")
-        --     for i, p in ipairs(cogs) do
-        --       cogs[i] = p:gsub(path, "")
-        --     end
-        --     vim.ui.select(cogs, { prompt = "Select a cog to debug" }, function(cog)
-        --       package = path .. cog .. "/main/" .. cog
-        --       coroutine.resume(dap_run_co, package)
-        --     end)
-        --   end)
-        -- end,
       },
     },
   },
