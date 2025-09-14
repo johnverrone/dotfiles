@@ -87,6 +87,11 @@ eval "$(zoxide init zsh)"
 # deno
 [ -s "/Users/johnverrone/.deno/env" ] && source "/Users/johnverrone/.deno/env"
 
+# ngrok path completions
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
 if command -v direnv 2>&1 >/dev/null
 then
   eval "$(direnv hook zsh)"

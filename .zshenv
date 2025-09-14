@@ -22,8 +22,6 @@ export PATH="$PATH:$HOME/.config/jv"
 # Add pythong binaries to path
 export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
-export GOPATH="$HOME/dev/go:$GOPATH"
-
 # Spaceship prompt configs to play nice with Warp
 export SPACESHIP_PROMPT_ASYNC=false
 export SPACESHIP_PROMPT_ADD_NEWLINE=false
