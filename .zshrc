@@ -37,6 +37,9 @@ alias ll='eza -l --icons --git -a --group-directories-first'
 alias lt='eza --tree --level=2 -l --icons --git --group-directories-first --git-ignore'
 alias lta='eza --tree --level=2 -l --icons --git --group-directories-first'
 
+# fzf open branches and checkout the selection
+alias ghpr='gh pr list --author "@me" | fzf --ansi --height "40%" | awk "{print \$1}" | xargs -I {} gh pr checkout {}'
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 

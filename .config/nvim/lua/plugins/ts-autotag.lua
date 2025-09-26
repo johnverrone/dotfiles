@@ -1,5 +1,5 @@
 return {
-  "nvim-ts-autotag",
+  "windwp/nvim-ts-autotag",
   opts = {
     enable_close = false, -- Auto close tags
     enable_rename = true, -- Auto rename pairs of tags

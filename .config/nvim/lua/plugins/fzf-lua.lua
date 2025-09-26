@@ -15,4 +15,11 @@ return {
       ["<F4>"] = "toggle-preview",
     },
   },
+  opts = {
+    winopts = {
+      preview = {
+        horizontal = "right:35%",
+      },
+    },
+  },
 }
