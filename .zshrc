@@ -26,9 +26,6 @@ bindkey -e
 # spotify cli
 alias sp='spotify'
 
-# storybook
-alias sb='npm run storybook -- -p 64000'
-
 # personal monorepo
 alias jv='cd ~/dev/jv'
 
@@ -99,3 +96,5 @@ if command -v direnv 2>&1 >/dev/null
 then
   eval "$(direnv hook zsh)"
 fi
+source /Users/johnverrone/.fsprofile
+eval "$(direnv hook zsh)"
