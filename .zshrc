@@ -29,6 +29,9 @@ alias sp='spotify'
 # personal monorepo
 alias jv='cd ~/dev/jv'
 
+# fzf projects
+alias cproj='cd $(find ~/dev -type d -maxdepth 3 -name ".git" -print | sed "s|/.git||" | fzf)'
+
 # eza - better ls
 alias ll='eza -l --icons --git -a --group-directories-first'
 alias lt='eza --tree --level=2 -l --icons --git --group-directories-first --git-ignore'
@@ -51,6 +54,31 @@ fo() (
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 )
+
+# Change project directory for all tmux panes
+# TODO: fix this.
+switchproj() {
+  local root="$HOME/dev"
+  local proj
+
+  if [ -z "$1" ]; then
+    proj=$(find "$root" -mindepth 2 -maxdepth 3 -type d -name ".git" \
+      | sed "s|$root/||; s|/.git||" | fzf)
+  else
+    proj="$1"
+  fi
+
+  [ -z "$proj" ] && return
+
+  local path="$root/$proj"
+
+  tmux send-keys -t dev:0 "cd $path && clear" C-m
+  tmux send-keys -t dev:1 "cd $path && clear" C-m
+  tmux send-keys -t dev:2 "cd $path && clear" C-m
+  tmux send-keys -t dev:3 "cd $path && clear" C-m
+
+  tmux rename-session -t dev "dev:$proj"
+}
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
