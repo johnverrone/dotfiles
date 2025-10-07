@@ -4,6 +4,8 @@
 vim.keymap.del("n", "<leader>gB")
 vim.keymap.del({ "n", "i", "v" }, "<A-j>")
 vim.keymap.del({ "n", "i", "v" }, "<A-k>")
+vim.keymap.del("n", "<S-h>")
+vim.keymap.del("n", "<S-l>")
 
 -- paste in visual and keep pasted value in register
 vim.keymap.set("x", "<leader>p", '"_dP')
