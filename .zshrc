@@ -97,6 +97,10 @@ if [ -f "$HOME/.fsprofile" ]; then
     echo "rebuiding and restarting: $@"
     make "$@" && ./services restart "$@"
   }
+  function mrg() {
+    echo "gazelling and rebuiding and restarting: $@"
+    gazelle && make "$@" && ./services restart "$@"
+  }
 fi
 
 # Add deno completions to search path
