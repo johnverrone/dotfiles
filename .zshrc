@@ -39,6 +39,7 @@ alias lta='eza --tree --level=2 -l --icons --git --group-directories-first'
 
 # fzf open branches and checkout the selection
 alias ghpr='gh pr list --author "@me" | fzf --ansi --height "40%" | awk "{print \$1}" | xargs -I {} gh pr checkout {}'
+alias gco='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff {1} --color=always" --pointer="➜" | xargs git checkout'
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
