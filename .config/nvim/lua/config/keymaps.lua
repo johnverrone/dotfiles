@@ -16,3 +16,7 @@ vim.keymap.set("n", "zz", vim.cmd.update)
 -- yank to clipboard with leader-y/Y
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- cycle through cmdline completion with up/down arrows
+vim.keymap.set("c", "<Up>", "<S-Tab>", { silent = true })
+vim.keymap.set("c", "<Down>", "<Tab>", { silent = true })
