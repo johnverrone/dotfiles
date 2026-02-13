@@ -1,10 +1,19 @@
 return {
   { "tomasiser/vim-code-dark" },
-  { "arzg/vim-colors-xcode" },
+  { "lunacookies/vim-colors-xcode" },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      styles = {
+        transparency = true,
+      },
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "codedark",
+      colorscheme = "rose-pine",
     },
   },
 }

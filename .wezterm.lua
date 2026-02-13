@@ -6,6 +6,8 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 config.font = wezterm.font("Maple Mono NF", { weight = "Regular" })
+-- config.color_scheme = "rose-pine"
+-- config.color_scheme = "Catppuccin Latte"
 -- config.color_scheme = "Vs Code Light+ (Gogh)"
 config.color_scheme = "Vs Code Dark+ (Gogh)"
 config.enable_tab_bar = false

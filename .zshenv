@@ -4,6 +4,8 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+#
+#echo "ZSHENV loaded successfully"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
@@ -21,6 +23,9 @@ export PATH="$PATH:$HOME/.config/jv"
 
 # Add pythong binaries to path
 export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+# Add local binaries to path (eg. Claude Code)
+export PATH="$PATH:$HOME/.local/bin"
 
 # Spaceship prompt configs to play nice with Warp
 export SPACESHIP_PROMPT_ASYNC=false

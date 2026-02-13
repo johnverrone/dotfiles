@@ -89,7 +89,7 @@ export NVM_DIR="$HOME/.nvm"
 # fullstory stuff
 if [ -f "$HOME/.fsprofile" ]; then
   source "$HOME/.fsprofile"
-  eval "$(/opt/homebrew/bin/direnv hook zsh)"
+  eval "$(direnv hook zsh)"
   if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
   alias svc='$FS_HOME/go/src/fs/services'
 
@@ -129,3 +129,5 @@ if command -v direnv 2>&1 >/dev/null
 then
   eval "$(direnv hook zsh)"
 fi
+source /Users/johnverrone/.fsprofile
+eval "$(direnv hook zsh)"
