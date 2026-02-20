@@ -86,24 +86,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# fullstory stuff
-if [ -f "$HOME/.fsprofile" ]; then
-  source "$HOME/.fsprofile"
-  eval "$(direnv hook zsh)"
-  if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
-  alias svc='$FS_HOME/go/src/fs/services'
-
-  # function to shorthand `make <cogs> && ./services restart <cogs>`
-  function mr() {
-    echo "rebuiding and restarting: $@"
-    make "$@" && ./services restart "$@"
-  }
-  function mrg() {
-    echo "gazelling and rebuiding and restarting: $@"
-    gazelle && make "$@" && ./services restart "$@"
-  }
-fi
-
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FPATH="/Users/johnverrone/.zsh/completions:$FPATH"; fi
 
@@ -125,9 +107,21 @@ if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
 
-if command -v direnv 2>&1 >/dev/null
-then
+# fullstory stuff
+if [ -f "$HOME/.fsprofile" ]; then
+  source "$HOME/.fsprofile"
   eval "$(direnv hook zsh)"
+  if [ -e /usr/local/bin/brew ]; then eval "$(/usr/local/bin/brew shellenv)"; else eval "$(/opt/homebrew/bin/brew shellenv)"; fi
+  alias svc='$FS_HOME/go/src/fs/services'
+
+  # function to shorthand `make <cogs> && ./services restart <cogs>`
+  function mr() {
+    echo "rebuiding and restarting: $@"
+    make "$@" && ./services restart "$@"
+  }
+  function mrg() {
+    echo "gazelling and rebuiding and restarting: $@"
+    gazelle && make "$@" && ./services restart "$@"
+  }
 fi
-source /Users/johnverrone/.fsprofile
-eval "$(direnv hook zsh)"
+
