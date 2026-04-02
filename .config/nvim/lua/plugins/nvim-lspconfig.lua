@@ -10,6 +10,21 @@ return {
           },
         },
       },
+      vtsls = {
+        settings = {
+          vtsls = {
+            autoUseWorkspaceTsdk = false,
+            tsserver = {
+              maxTsServerMemory = 8192,
+            },
+          },
+          typescript = {
+            tsserver = {
+              maxTsServerMemory = 8192,
+            },
+          },
+        },
+      },
     },
   },
 }

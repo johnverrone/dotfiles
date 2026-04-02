@@ -28,8 +28,6 @@ brew "zoxide"
 
 # Apps
 cask "arc"
-cask "claude-code"
-cask "codex"
 cask "discord"
 cask "figma"
 cask "iterm2"

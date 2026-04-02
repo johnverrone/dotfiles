@@ -125,3 +125,7 @@ if [ -f "$HOME/.fsprofile" ]; then
   }
 fi
 
+# API keys
+[ -f "$HOME/.zshkeys" ] && source "$HOME/.zshkeys"
+source /Users/johnverrone/.fsprofile
+eval "$(direnv hook zsh)"
