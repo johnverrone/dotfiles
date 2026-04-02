@@ -16,23 +16,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 # load starship prompt
 eval "$(starship init zsh)"
 
-# vi mode cursor shape (beam for insert, block for normal)
-function zle-keymap-select {
-  if [[ $KEYMAP == vicmd ]] || [[ $1 == 'block' ]]; then
-    echo -ne '\e[2 q'  # block cursor
-  else
-    echo -ne '\e[6 q'  # beam cursor
-  fi
-  zle reset-prompt
-}
-zle -N zle-keymap-select
-
-function zle-line-init {
-  echo -ne '\e[6 q'  # beam cursor on new prompt
-  zle reset-prompt
-}
-zle -N zle-line-init
-
 # dotfile management
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
