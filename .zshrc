@@ -13,13 +13,28 @@ fi
 # ensure brew bin is in PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
-# load spaceship prompt
-source /opt/homebrew/opt/spaceship/spaceship.zsh
-export SPACESHIP_DIR_COLOR=208 # orange
+# load starship prompt
+eval "$(starship init zsh)"
+
+# vi mode cursor shape (beam for insert, block for normal)
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 == 'block' ]]; then
+    echo -ne '\e[2 q'  # block cursor
+  else
+    echo -ne '\e[6 q'  # beam cursor
+  fi
+  zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-init {
+  echo -ne '\e[6 q'  # beam cursor on new prompt
+  zle reset-prompt
+}
+zle -N zle-line-init
 
 # dotfile management
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-bindkey -e
 
 # Claude Code to local installation
 
@@ -86,21 +101,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FPATH="/Users/johnverrone/.zsh/completions:$FPATH"; fi
-
-# bun completions
-[ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
-
 # Bun
 export BUN_INSTALL="/Users/john/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# zoxide
-eval "$(zoxide init zsh)"
+# bun completions
+[ -s "/Users/john/.bun/_bun" ] && source "/Users/john/.bun/_bun"
 
 # deno
 [ -s "/Users/johnverrone/.deno/env" ] && source "/Users/johnverrone/.deno/env"
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/johnverrone/.zsh/completions:"* ]]; then export FPATH="/Users/johnverrone/.zsh/completions:$FPATH"; fi
+
+# zoxide
+eval "$(zoxide init zsh)"
 
 # ngrok path completions
 if command -v ngrok &>/dev/null; then
@@ -127,5 +140,3 @@ fi
 
 # API keys
 [ -f "$HOME/.zshkeys" ] && source "$HOME/.zshkeys"
-source /Users/johnverrone/.fsprofile
-eval "$(direnv hook zsh)"
