@@ -79,10 +79,17 @@ switchproj() {
   tmux rename-session -t dev "dev:$proj"
 }
 
-# nvm
+# nvm (lazy-loaded)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+function _load_nvm() {
+  unfunction nvm node npm npx _load_nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+function nvm() { _load_nvm; nvm "$@" }
+function node() { _load_nvm; node "$@" }
+function npm() { _load_nvm; npm "$@" }
+function npx() { _load_nvm; npx "$@" }
 
 # Bun
 export BUN_INSTALL="/Users/john/.bun"
