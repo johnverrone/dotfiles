@@ -6,12 +6,13 @@ return {
   keys = {
     { "<tab>", false },
     { "<leader>as", false },
+    { "<leader>av", false },
     {
-      "<leader>ac",
+      "<leader>aa",
       function()
-        require("sidekick.cli").toggle({ name = "claude", focus = true })
+        require("sidekick.cli").select({ filter = { installed = true } })
       end,
-      desc = "Sidekick Toggle Claude",
+      desc = "Select CLI",
     },
   },
 }
