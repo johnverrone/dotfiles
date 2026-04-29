@@ -12,8 +12,8 @@ if tmux has-session -t "$session" 2>/dev/null; then
 else
   tmux new-session -d -s "$session" -n server
   tmux new-window -t "$session" -n nvim
-  tmux new-window -t "$session" -n claude
   tmux new-window -t "$session" -n term
+  tmux new-window -t "$session" -n claude
   tmux select-window -t "$session:1"
   tmux attach-session -t "$session"
 fi
