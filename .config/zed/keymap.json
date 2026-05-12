@@ -1,0 +1,102 @@
+[
+  // Alias space → cmd-space in vim normal mode so the universal leader bindings work
+  // (also prevents vim::WrappingRight from conflicting with which-key)
+  {
+    "context": "(VimControl && !menu) || EmptyPane",
+    "bindings": {
+      "space": ["workspace::SendKeystrokes", "cmd-space"],
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Save
+      "ctrl-s": "workspace::Save",
+
+      // File hopping
+      "cmd-space space": "file_finder::Toggle",
+      "cmd-space ,": "tab_switcher::ToggleAll",
+
+      // Search
+      "cmd-space s g": "pane::DeploySearch",
+
+      // Code actions (editor-specific, but harmless from other contexts)
+      "cmd-space c r": "editor::Rename",
+      "cmd-space c a": "editor::ToggleCodeActions",
+      "cmd-space c f": "editor::Format",
+      "cmd-space c o": "outline::Toggle",
+
+      // File Explorer
+      "cmd-space e": "project_panel::ToggleFocus",
+
+      // Terminal
+      "cmd-space t t": "terminal_panel::ToggleFocus",
+      "cmd-space t f": "workspace::NewCenterTerminal",
+      "cmd-space t n": "workspace::NewTerminal",
+      "cmd-space t r": "terminal::RenameTerminal",
+
+      // Git
+      "cmd-space g s": "git_panel::ToggleFocus",
+      "cmd-space g p": "git::Pull",
+      "cmd-space g P": "git::Push",
+      "cmd-space g b": "git::Branch",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+      "ctrl-space": "editor::ShowCompletions",
+    },
+  },
+  // --- Git Panel ---
+  {
+    "context": "GitPanel > Editor && vim_mode == normal",
+    "bindings": {
+      "escape": "workspace::CloseActiveDock",
+    },
+  },
+  // --- Tab Switcher ---
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-x": "tab_switcher::CloseSelectedItem",
+    },
+  },
+  // --- Editor (vim normal mode) ---
+  {
+    "context": "vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-{": "pane::SwapItemLeft",
+      "ctrl-}": "pane::SwapItemRight",
+    },
+  },
+  // --- Terminal ---
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-{": "pane::SwapItemLeft",
+      "ctrl-}": "pane::SwapItemRight",
+    },
+  },
+  // --- Project panel ---
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "escape": "workspace::CloseActiveDock",
+    },
+  },
+]
