@@ -2,7 +2,7 @@
   // Alias space → cmd-space in vim normal mode so the universal leader bindings work
   // (also prevents vim::WrappingRight from conflicting with which-key)
   {
-    "context": "(VimControl && !menu) || EmptyPane",
+    "context": "(VimControl && !menu) || EmptyPane || (GitPanel && ChangesList && !GitBranchSelector)",
     "bindings": {
       "space": ["workspace::SendKeystrokes", "cmd-space"],
     },
@@ -45,15 +45,15 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      // "j k": "vim::NormalBefore"
       "ctrl-space": "editor::ShowCompletions",
     },
   },
   // --- Git Panel ---
   {
-    "context": "GitPanel > Editor && vim_mode == normal",
+    "context": "GitPanel && ChangesList && !GitBranchSelector",
     "bindings": {
-      "escape": "workspace::CloseActiveDock",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "git_panel::FocusEditor",
     },
   },
   // --- Tab Switcher ---
@@ -75,9 +75,19 @@
       "ctrl-}": "pane::SwapItemRight",
     },
   },
+  {
+    "context": "GitPanel > Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "escape": "workspace::CloseActiveDock",
+      "ctrl-k": "git_panel::FocusChanges",
+    },
+  },
   // --- Terminal ---
   {
     "context": "Terminal",
+    "unbind": {
+      "cmd-k": "terminal::Clear",
+    },
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
@@ -98,5 +108,19 @@
       "ctrl-k": "workspace::ActivatePaneUp",
       "escape": "workspace::CloseActiveDock",
     },
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual || vim_mode == operator",
+    "unbind": {
+      "[ e": "editor::MoveLineUp",
+      "] e": "editor::MoveLineDown",
+    },
+    "bindings": {
+      "] e": "editor::GoToDiagnostic",
+    },
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual || vim_mode == operator",
+    "unbind": {},
   },
 ]

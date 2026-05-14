@@ -10,7 +10,7 @@ config.font = wezterm.font("Maple Mono NF", { weight = "Regular" })
 -- config.color_scheme = "Catppuccin Latte"
 -- config.color_scheme = "Vs Code Light+ (Gogh)"
 config.color_scheme = "Vs Code Dark+ (Gogh)"
-config.enable_tab_bar = false
+-- config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.font_size = 14
 config.use_cap_height_to_scale_fallback_fonts = true
