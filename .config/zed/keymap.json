@@ -19,6 +19,9 @@
       "cmd-space space": "file_finder::Toggle",
       "cmd-space ,": "tab_switcher::ToggleAll",
 
+      // Buffer management
+      "cmd-space b o": "pane::CloseOtherItems",
+
       // Search
       "cmd-space s g": "pane::DeploySearch",
 

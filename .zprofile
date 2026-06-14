@@ -20,6 +20,7 @@ fi
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
+export MANPAGER='nvim +Man!'
 
 #
 # Language
@@ -61,3 +62,8 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/johnverrone/Library/Application Support/JetBrains/Toolbox/scripts"
+

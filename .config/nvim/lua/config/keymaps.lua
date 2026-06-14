@@ -20,3 +20,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- cycle through cmdline completion with up/down arrows
 vim.keymap.set("c", "<Up>", "<S-Tab>", { silent = true })
 vim.keymap.set("c", "<Down>", "<Tab>", { silent = true })
+
+-- quick jump to start / end of linie
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
