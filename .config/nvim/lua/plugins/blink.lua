@@ -77,7 +77,7 @@ return {
           end)
           return true
         end,
-        "fallback_to_mappings",
+        "fallback",
       },
     },
   },
