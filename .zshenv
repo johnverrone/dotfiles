@@ -32,6 +32,9 @@ export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 # Add local binaries to path (eg. Claude Code)
 export PATH="$PATH:$HOME/.local/bin"
 
+# opencode
+export PATH="$PATH:$HOME/.opencode/bin"
+
 
 # Path and completions for the Google Cloud SDK.
 if [ -d /opt/homebrew/share/google-cloud-sdk/ ]; then

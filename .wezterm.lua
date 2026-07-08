@@ -28,23 +28,34 @@ config.mouse_bindings = {
 	},
 }
 
+-- Treat both Option keys as a plain modifier (not macOS dead-key
+-- composition) so the OPT bindings below match deterministically.
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = false
+
 config.keys = {
-	-- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to jump by word
+	-- OPT-Left / OPT-Right jump by word in the shell (readline ALT-b / ALT-f).
 	{
 		key = "LeftArrow",
 		mods = "OPT",
-		action = act.SendKey({
-			key = "b",
-			mods = "ALT",
-		}),
+		action = act.SendKey({ key = "b", mods = "ALT" }),
 	},
 	{
 		key = "RightArrow",
 		mods = "OPT",
-		action = act.SendKey({
-			key = "f",
-			mods = "ALT",
-		}),
+		action = act.SendKey({ key = "f", mods = "ALT" }),
+	},
+	-- OPT-[ / OPT-] switch tmux windows (prev/next). Send CSI-u sequences that
+	-- tmux maps via user-keys; a raw ALT-[ (ESC-[) collides with escape seqs.
+	{
+		key = "[",
+		mods = "OPT",
+		action = act.SendString("\x1b[91;3u"),
+	},
+	{
+		key = "]",
+		mods = "OPT",
+		action = act.SendString("\x1b[93;3u"),
 	},
 }
 
