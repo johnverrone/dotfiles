@@ -24,3 +24,34 @@ vim.keymap.set("c", "<Down>", "<Tab>", { silent = true })
 -- quick jump to start / end of linie
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
+
+-- copy current file path (relative to project root) with line number/range to clipboard
+vim.api.nvim_create_user_command("CopyFilePath", function(opts)
+  local file_path = vim.fn.expand("%:p")
+
+  -- make the path relative to the project root, falling back to the absolute path
+  local root = vim.fs.root(0, ".git")
+  local path = file_path
+  if root then
+    path = file_path:gsub("^" .. vim.pesc(root) .. "/", "")
+  end
+
+  -- opts.range > 0 when invoked from a visual selection (:'<,'> auto-inserted)
+  local line1, line2
+  if opts.range > 0 then
+    line1, line2 = opts.line1, opts.line2
+  else
+    line1 = vim.fn.line(".")
+    line2 = line1
+  end
+  local line_spec = line1 == line2 and tostring(line1) or (line1 .. "-" .. line2)
+
+  local result = path .. ":" .. line_spec
+  vim.fn.setreg("+", result)
+  vim.notify("Copied to clipboard: " .. result)
+end, { range = true, desc = "Copy current file path with line number/range" })
+
+vim.keymap.set({ "n", "x" }, "<leader>cy", ":CopyFilePath<CR>", {
+  silent = true,
+  desc = "Copy current file path with line number/range",
+})
