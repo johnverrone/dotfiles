@@ -24,6 +24,7 @@ brew "sqlc"
 brew "tmux"
 brew "uv"
 brew "wget"
+brew "yazi"
 brew "zoxide"
 
 # Apps
