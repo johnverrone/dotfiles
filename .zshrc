@@ -12,6 +12,7 @@ fi
 
 # ensure brew bin is in PATH
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 
 # load starship prompt
 eval "$(starship init zsh)"
