@@ -168,6 +168,12 @@ return {
                 return "Special"
               end,
             },
+            -- yaks
+            {
+              function()
+                return require("yaks.statusline").get()
+              end,
+            },
           },
           lualine_y = {
             {
