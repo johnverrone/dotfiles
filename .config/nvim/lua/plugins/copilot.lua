@@ -1,6 +1,7 @@
 return {
   {
     "zbirenbaum/copilot.lua",
+    enabled = false,
     opts = {
       -- Resolve whichever `node` is on PATH at startup (fsdev toolchain, nvm, etc.)
       -- rather than hardcoding a version-specific path that breaks on upgrades.
