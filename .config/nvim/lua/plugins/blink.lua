@@ -38,6 +38,9 @@ end
 
 return {
   "saghen/blink.cmp",
+  dependencies = {
+    { "saghen/blink.compat", version = "2.*" },
+  },
   opts = {
     completion = {
       menu = {

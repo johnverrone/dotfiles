@@ -55,3 +55,6 @@ vim.keymap.set({ "n", "x" }, "<leader>cy", ":CopyFilePath<CR>", {
   silent = true,
   desc = "Copy current file path with line number/range",
 })
+
+-- close all buffers (LSP servers stay alive and reattach on next open)
+vim.keymap.set("n", "<leader>bq", "<cmd>%bdelete<cr>", { desc = "Close all buffers" })

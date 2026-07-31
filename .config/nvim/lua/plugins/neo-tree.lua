@@ -20,6 +20,7 @@ return {
     window = {
       position = "float",
       reveal = true,
+      reveal_force_cwd = true,
     },
   },
 }
