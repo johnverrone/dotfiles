@@ -4,13 +4,20 @@ return {
     {
       "<leader>fb",
       function()
-        -- find merge base against green, fall back to master
+        -- pick the newest merge-base across candidates (fewest files from HEAD)
         local base
-        for _, ref in ipairs({ "green", "master" }) do
-          vim.fn.system("git merge-base HEAD " .. ref)
-          if vim.v.shell_error == 0 then
-            base = ref
-            break
+        for _, ref in ipairs({ "origin/green", "origin/master", "green", "master" }) do
+          local sha = vim.fn.system("git merge-base HEAD " .. ref):gsub("\n", "")
+          if vim.v.shell_error == 0 and sha ~= "" then
+            if base == nil then
+              base = sha
+            else
+              -- if sha descends from base, it's newer — prefer it
+              vim.fn.system("git merge-base --is-ancestor " .. base .. " " .. sha)
+              if vim.v.shell_error == 0 then
+                base = sha
+              end
+            end
           end
         end
         if not base then
@@ -25,19 +32,15 @@ return {
         local cwd = git_root
         local relative_flag = ""
         if fs_home and fs_home ~= "" and fs_home ~= git_root then
-          local rel = fs_home:sub(#git_root + 2)
-          if rel ~= "" then
-            cwd = fs_home
-            relative_flag = " --relative=" .. rel
-          end
+          cwd = fs_home
+          -- --relative without a path uses cwd as the base; --relative=<path> mis-parses
+          relative_flag = " --relative"
         end
-        fzf.fzf_exec("git diff --name-only" .. relative_flag .. " " .. base .. "...", {
+        fzf.files({
           prompt = "Branch Files> ",
-          previewer = "builtin",
+          cmd = "git diff --name-only" .. relative_flag .. " " .. base,
           cwd = cwd,
-          file_icons = true,
-          color_icons = true,
-          actions = fzf.config.globals.actions.files,
+          hidden = false,
         })
       end,
       desc = "Branch files",
