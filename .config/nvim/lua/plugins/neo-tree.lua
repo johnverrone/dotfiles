@@ -8,8 +8,7 @@ return {
       function()
         require("neo-tree.command").execute({
           toggle = true,
-          position = "float",
-          reveal = true,
+          reveal_force_cwd = true,
         })
       end,
       desc = "Toggle NeoTree",
@@ -19,8 +18,6 @@ return {
   opts = {
     window = {
       position = "float",
-      reveal = true,
-      reveal_force_cwd = true,
       mappings = {
         ["<space>"] = "noop",
         ["e"] = "toggle_node",
