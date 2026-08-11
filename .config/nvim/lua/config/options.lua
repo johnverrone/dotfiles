@@ -3,6 +3,9 @@
 -- Add any additional options here
 vim.opt.clipboard = ""
 
+-- LazyVim hides Neovim's intro splash; bring it back.
+vim.opt.shortmess:remove("I")
+
 -- Scope the Rust toolchain (rustup) to where nvim was launched:
 --   * inside the fsdev tree -> fsdev rustup (same as the repo's direnv .envrc)
 --   * anywhere else         -> the default ~/.rustup, even when a stale fsdev

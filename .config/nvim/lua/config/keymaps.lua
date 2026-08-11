@@ -21,10 +21,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("c", "<Up>", "<S-Tab>", { silent = true })
 vim.keymap.set("c", "<Down>", "<Tab>", { silent = true })
 
--- quick jump to start / end of linie
-vim.keymap.set("n", "H", "^")
-vim.keymap.set("n", "L", "$")
-
 -- copy current file path (relative to project root) with line number/range to clipboard
 vim.api.nvim_create_user_command("CopyFilePath", function(opts)
   local file_path = vim.fn.expand("%:p")
@@ -58,3 +54,12 @@ vim.keymap.set({ "n", "x" }, "<leader>cy", ":CopyFilePath<CR>", {
 
 -- close all buffers (LSP servers stay alive and reattach on next open)
 vim.keymap.set("n", "<leader>bq", "<cmd>%bdelete<cr>", { desc = "Close all buffers" })
+
+-- search and replace
+vim.keymap.set(
+  "n",
+  "<leader><space>",
+  ":'{,'}s/<C-r>=expand('<cword>')<CR>/",
+  { desc = "Search and replace in paragraph" }
+)
+vim.keymap.set("n", "<leader>%", ":%s/<C-r>=expand('<cword>')<CR>", { desc = "Search and replace in file" })

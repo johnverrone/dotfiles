@@ -1,9 +1,7 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    image = {
-      enabled = false,
-    },
+    image = { enabled = false },
   },
   keys = {
     { "<leader>gb", false },

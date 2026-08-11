@@ -1,6 +1,7 @@
 return {
   "ibhagwan/fzf-lua",
   keys = {
+    { "<leader><space", false },
     {
       "<leader>fb",
       function()
