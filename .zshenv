@@ -50,3 +50,4 @@ export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 #
 # Ignore FullStory's PS1
 export SKIP_FS_PS1=true
+export FS_SKIP_CD=true
