@@ -40,6 +40,9 @@ alias lta='eza --tree --level=2 -l --icons --git --group-directories-first'
 alias ghpr='gh pr list --author "@me" | fzf --ansi --height "40%" | awk "{print \$1}" | xargs -I {} gh pr checkout {}'
 alias gco='git branch --sort=-committerdate | fzf --header "Checkout Recent Branch" --preview "git diff {1} --color=always" --pointer="➜" | xargs git checkout'
 
+# format json in clipboard
+alias jsontidy="pbpaste | jq '.' | pbcopy"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
@@ -133,3 +136,5 @@ fi
 
 # API keys
 [ -f "$HOME/.zshkeys" ] && source "$HOME/.zshkeys"
+source /Users/johnverrone/.fsprofile
+eval "$(direnv hook zsh)"
